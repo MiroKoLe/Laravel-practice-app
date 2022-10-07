@@ -20,6 +20,20 @@
         <a href="">Posts</a>
         </li>
     </ul>
+    <ul class="flex items-center">
+        <li class="p-3">
+            <a href="">Miroslav Kolev</a>
+        </li>
+        <li class="p-3">
+        <a href="">Login</a>
+        </li>
+        <li class="p-3">
+        <a href="">Register</a>
+        </li>
+        <li class="p-3">
+        <a href="">Logout</a>
+        </li>
+    </ul>
 </nav>
 @yield('content')
 </body>
