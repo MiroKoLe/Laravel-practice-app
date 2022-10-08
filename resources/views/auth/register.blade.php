@@ -4,6 +4,7 @@
    <div class="flex justify-center">
     <div class="w-6/12 bg-white p-6 rounded-lg">
         <form action="{{route('register')}}" method="posts">
+            @csrf //cross site request forgery
             <div class="mb-4">
                 <label for="name" class="sr-only">Name</label>
                 <input type="text" name="name" id="name" placeholder="Your Name" value="">

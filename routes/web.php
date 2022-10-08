@@ -14,7 +14,7 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register'); //by name we are giving the standard name to the route.
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
 Route::get('/posts', function () {
     return view('posts.index');
