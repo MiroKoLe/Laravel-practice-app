@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class RegisterController
 {
@@ -27,5 +29,11 @@ class RegisterController
             'password' =>'required|confirmed'
         ]);
 
+        User::create([
+            'name'=>$request->name,
+            'username'=>$request->username,
+            'email'=>$request->email,
+            'password' => Hash::make($request->password),
+        ]);
     }
 }
