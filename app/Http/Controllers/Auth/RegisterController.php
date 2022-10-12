@@ -35,6 +35,8 @@ class RegisterController
             'password' => Hash::make($request->password),
         ]);
 
+        auth()->attempt($request->only('email', 'password')); //sign in
+
         return redirect()->route('dashboard');
     }
 }

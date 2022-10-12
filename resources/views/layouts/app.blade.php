@@ -21,9 +21,14 @@
         </li>
     </ul>
     <ul class="flex items-center">
+        @if (auth()->user())
         <li class="p-3">
-            <a href="">Miroslav Kolev</a>
+            <a href="">{{ Auth::user()->name }}</a>
         </li>
+        <li class="p-3">
+        <a href="">Logout</a>
+        </li>
+        @else
         <li class="p-3">
         <a href="">Login</a>
         </li>
@@ -33,6 +38,7 @@
         <li class="p-3">
         <a href="">Logout</a>
         </li>
+        @endif
     </ul>
 </nav>
 @yield('content')
