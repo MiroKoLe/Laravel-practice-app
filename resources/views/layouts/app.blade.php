@@ -14,7 +14,7 @@
             <a href="">Home</a>
         </li>
         <li class="p-3">
-        <a href="">Dashboard</a>
+        <a href="{{ route('dashboard') }}">Dashboard</a>
         </li>
         <li class="p-3">
         <a href="">Posts</a>
@@ -26,17 +26,17 @@
             <a href="">{{ Auth::user()->name }}</a>
         </li>
         <li class="p-3">
-        <a href="">Logout</a>
+        <form action="{{route('logout')}}" method="post">
+        @csrf
+        <button class="p-3">Logout</button>
+            </form>
         </li>
         @else
         <li class="p-3">
-        <a href="">Login</a>
+        <a href="{{ route('login') }}">Login</a>
         </li>
         <li class="p-3">
         <a href="{{route('register')}}">Register</a>
-        </li>
-        <li class="p-3">
-        <a href="">Logout</a>
         </li>
         @endif
     </ul>
