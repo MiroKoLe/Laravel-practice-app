@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -35,5 +34,7 @@ class RegisterController
             'email'=>$request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        return redirect()->route('dashboard');
     }
 }
