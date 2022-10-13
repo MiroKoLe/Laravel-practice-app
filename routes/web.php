@@ -5,7 +5,10 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\LoginController;
-use GuzzleHttp\Middleware;
+use App\Http\Controllers\PostController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +37,9 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/posts', function () {
-    return view('posts.index');
-});
+Route::get('/posts', [PostController::class, 'index'])->name('posts');
+// Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::post('/posts', [PostController::class, 'store']);
+
+
+

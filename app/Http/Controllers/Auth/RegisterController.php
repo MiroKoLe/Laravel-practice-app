@@ -9,6 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
+
 class RegisterController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
