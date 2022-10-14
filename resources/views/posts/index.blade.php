@@ -21,6 +21,16 @@
                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded font-medium">Post</button>
                     </div>
                 </form>
+                @if($posts->count())
+                @foreach($posts as $post)
+                <div class='mg-4'>
+                <a href="" class="font-bold">{{$post->user->name}}</a> <!--user as a object and than property for the object -->
+                   <span class="text-gray-600 text-sm">{{$post->created_at->diffForHumans()}}</span>
+                   <p class="mb-2">{{$post->body}}</p>
+                </div>
+                @endforeach
+                @else<p>There are no posts</p>
+                @endif
             @endauth
         </div>
     </div>
